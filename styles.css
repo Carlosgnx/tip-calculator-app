@@ -1,0 +1,201 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 55%;
+  font-family: "Space Mono", monospace;
+}
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+body {
+  font-size: 1.6rem;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-grayish-cyan);
+  overflow: hidden;
+}
+main h1 {
+  letter-spacing: 0.5rem;
+  color: var(--grayish-cyan);
+}
+.splitter {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  width: 35rem;
+}
+.splitter__calculator {
+  color: var(--dark-grayish-cyan);
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+.splitter__tips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.splitter__tip-btn {
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+  font-size: 2rem;
+  color: var(--white);
+  border: none;
+  width: 100%;
+  padding: 0.8rem 0;
+  border-radius: 0.5rem;
+  background-color: var(--very-dark-cyan);
+  text-align: center;
+}
+.splitter__tip-btn:hover {
+  background-color: var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input {
+  width: 100%;
+  font-size: 2rem;
+  font-family: "Space Mono", monospace;
+  color: var(--very-dark-cyan);
+  border: solid 0.2rem transparent;
+  padding: 0.5rem;
+  outline: none;
+  background-color: var(--very-light-grayish-cyan);
+  border-radius: 0.5rem;
+  text-align: right;
+}
+input:hover {
+  cursor: pointer;
+  border: solid 0.2rem var(--strong-cyan);
+}
+.--custom {
+  padding: 0;
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--very-dark-cyan);
+  cursor: text;
+}
+.splitter__bill-input-box {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.splitter__bill-input-box > img {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translate(0, -50%);
+}
+.splitter__people-number {
+  position: relative;
+}
+.splitter__people-zero,
+.splitter__bill-zero {
+  display: none;
+  font-size: 1.2rem;
+  text-align: right;
+  color: red;
+}
+.splitter__people-number > img {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translate(0, -50%);
+}
+.splitter__result {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  background-color: var(--very-dark-cyan);
+}
+.splitter__result > * {
+  margin: 1.5rem;
+}
+.splitter__result > div {
+  display: flex;
+  justify-content: space-between;
+}
+.splitter__result h4 {
+  color: var(--very-light-grayish-cyan);
+}
+.splitter__result p {
+  font-size: 1.2rem;
+  color: var(--grayish-cyan);
+}
+.splitter__result h2 {
+  color: var(--strong-cyan);
+}
+.splitter__reset-btn {
+  cursor: pointer;
+  margin-top: auto;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--very-dark-cyan);
+  padding: 1rem;
+  background-color: var(--strong-cyan);
+  border: none;
+  border-radius: 0.5rem;
+}
+.splitter__reset-btn:hover {
+  background-color: var(--light-grayish-cyan);
+}
+
+/*States*/
+.border-error {
+  border: solid 0.2rem red;
+}
+.border-focus {
+  border: solid 0.2rem var(--very-dark-cyan);
+}
+.show {
+  display: block;
+}
+.selected {
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+}
+/*end of States*/
+
+/*360px*/
+@media screen and (min-width: 22.5em) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+/*1024px*/
+@media screen and (min-width: 64em) {
+  .splitter {
+    flex-direction: row;
+    width: 75rem;
+  }
+  .splitter__calculator {
+    width: 50%;
+    margin: 0;
+    margin-right: 2rem;
+  }
+  .splitter__tips {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .splitter__result {
+    width: 50%;
+  }
+}
