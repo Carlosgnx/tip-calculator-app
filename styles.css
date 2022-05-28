@@ -145,7 +145,6 @@ input:hover {
 }
 .splitter__reset-btn {
   cursor: pointer;
-  margin-top: auto;
   font-size: 1.6rem;
   font-weight: bold;
   color: var(--very-dark-cyan);
@@ -196,6 +195,9 @@ input:hover {
   }
   .splitter__result {
     width: 50%;
+  }
+  .splitter__reset-btn {
+    margin-top: auto;
   }
   .splitter__result h2 {
     font-size: 3.5rem;
