@@ -31,6 +31,7 @@ main {
 main h1 {
   letter-spacing: 0.5rem;
   color: var(--grayish-cyan);
+  margin-bottom: 2rem;
 }
 .splitter {
   display: flex;
@@ -181,6 +182,9 @@ input:hover {
 
 /*1024px*/
 @media screen and (min-width: 64em) {
+  html {
+    font-size: 75%;
+  }
   .splitter {
     flex-direction: row;
     width: 75rem;
