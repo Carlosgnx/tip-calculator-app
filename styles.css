@@ -157,7 +157,6 @@ input:hover {
 .splitter__reset-btn:hover {
   background-color: var(--light-grayish-cyan);
 }
-
 /*States*/
 .border-error {
   border: solid 0.2rem red;

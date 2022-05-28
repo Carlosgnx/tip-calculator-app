@@ -7,6 +7,7 @@ let billIsZeroElement = document.getElementsByClassName('splitter__bill-zero')[0
 let peopleIsZeroElement = document.getElementsByClassName('splitter__people-zero')[0]
 let customTipElement = document.getElementsByClassName('--custom')[0]
 let tipButtonElements = document.getElementsByClassName('splitter__tip-btn')
+let resetButtonElement = document.getElementsByClassName('splitter__reset-btn')[0]
 //Variables
 let bill = 0
 let tip = 0
@@ -61,6 +62,20 @@ function updateAndVerify() {
     console.log(`People: ${people}`)
 }
 /**
+ * Reset all values
+ */
+function reset() {
+    for (let i = 0; i < tipButtonElements.length; i++) {
+        tipButtonElements[i].classList.remove('selected')
+    }
+    customTipElement.value = ''
+    billInputElement.value = ''
+    numberOfPeopleElement.value = ''
+    totalElement.innerText = '$0.00'
+    amountElement.innerText = '$0.00'
+    resetButtonElement.disabled = true
+}
+/**
  * Calculate the variables to display the result
  */
 function calculate() {
@@ -70,6 +85,8 @@ function calculate() {
         total = (bill / people) + tipAmount
         amountElement.innerText = `$${tipAmount.toFixed(2)}`
         totalElement.innerText = `$${total.toFixed(2)}`
+        resetButtonElement.disabled = false
     }
 
 }
+
