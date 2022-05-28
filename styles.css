@@ -197,4 +197,7 @@ input:hover {
   .splitter__result {
     width: 50%;
   }
+  .splitter__result h2 {
+    font-size: 3.5rem;
+  }
 }
